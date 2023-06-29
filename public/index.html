@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de ejemplo</title>
+</head>
+
+<body>
+  <main>
+    <h1>Ejemplo de html</h1>
+    <article id="html">
+      <h2>HTML</h2>
+      <section id="parrafos">
+
+        <h3>Párrafos</h3>
+        <p><strong>Lorem ipsum</strong> dolor sit amet consectetur adipisicing elit. Dolore iure reiciendis sed sapiente
+          voluptatem
+          ratione debitis iusto velit explicabo distinctio, obcaecati quasi temporibus voluptas recusandae ipsa quod
+          porro eveniet? Aperiam.</p>
+        <p><em>Lorem ipsum</em> dolor sit amet consectetur adipisicing elit. Suscipit doloremque vel pariatur voluptatum
+          velit
+          saepe reprehenderit dolorum, natus sunt, eaque tempore eligendi, fugit non similique? <br> Earum ipsum
+          accusamus
+          molestiae animi labore hic? Maiores, animi. Consequuntur voluptatem ducimus asperiores dolorem, nam aut
+          explicabo, illum harum suscipit iste numquam aspernatur beatae, esse praesentium aliquid reprehenderit minus
+          expedita! Ipsum quos, deleniti porro sequi possimus optio debitis architecto modi laboriosam vero dolorem,
+          mollitia sed tenetur provident ipsa consequuntur nihil dicta animi nesciunt! <br> Nobis similique illo commodi
+          odio
+          veritatis ea magnam hic, porro numquam temporibus soluta, omnis fuga ipsa quisquam sunt inventore ab nesciunt
+          molestias sequi ex quo. Ratione omnis laborum eius, quibusdam facere quidem minus consequatur reprehenderit
+          mollitia eos consequuntur labore hic eum, unde animi, quasi iure distinctio molestiae obcaecati saepe vel
+          voluptatum tenetur. Ratione asperiores unde fugit tempore deleniti veniam blanditiis! <br> Minus possimus
+          dicta
+          culpa quisquam? Eius expedita, ab, porro maiores error veniam quo minus corrupti iste sunt voluptatem? Nisi
+          porro, aut vitae accusamus reprehenderit explicabo temporibus quis assumenda ab illum ea odit iure architecto
+          obcaecati. Velit explicabo, perspiciatis architecto laudantium itaque facilis! <br> Fuga, saepe vitae. Error
+          ullam,
+          ducimus perferendis magnam aut tempore architecto officia dicta laudantium. Perspiciatis veritatis impedit
+          adipisci numquam eos praesentium saepe? Culpa tempora id accusantium quia similique neque, hic adipisci ab
+          voluptatibus provident explicabo obcaecati eaque laborum quas? Laboriosam fugit quod iure quae porro delectus
+          magnam optio quisquam necessitatibus, vitae odio, enim ducimus nemo quaerat quos provident. <br> Modi hic
+          cumque
+          similique nulla architecto minus illum tempore odit veniam ipsum asperiores, soluta vel, dolores laudantium
+          ipsam deserunt ex eius sunt quidem cupiditate rem eaque eos earum iste! Reprehenderit rem repellat facere quam
+          aperiam eligendi in ipsam, pariatur officiis possimus unde saepe velit placeat quis fugit minima ipsum
+          dolores, totam quasi voluptatem recusandae voluptatum. Odio nostrum, dolor non labore atque esse?</p>
+
+        <h3>Ejemplo de código</h3>
+        <pre>
+        for (int i = 1; i <= 10; i++) {
+          Long id = (long) i;
+          String nombre = "Producto " + i;
+          BigDecimal precio = new BigDecimal(i + "0");
+          LocalDate caducidad = LocalDate.of(2024 + i, i, i * 2);
+    
+          Producto producto = new Producto(id, nombre, precio, caducidad);
+    
+          bilbao.introducir(producto);
+        }
+      </pre>
+
+      </section>
+      <section id="tabla">
+        <h3>Tables</h3>
+        <table>
+          <caption>Tabla de ejemplo</caption>
+          <thead>
+              <tr>
+                  <th>Id</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+              </tr>
+          </thead>
+          <tbody>
+              <!-- tr*5>(th>{$})+(td>{Nombre $})+(td>{Apellido $}) -->
+              <tr>
+                  <th>1</th>
+                  <td>Nombre 1</td>
+                  <td>Apellido 1</td>
+              </tr>
+              <tr>
+                  <th>2</th>
+                  <td>Nombre 2</td>
+                  <td>Apellido 2</td>
+              </tr>
+              <tr>
+                  <th>3</th>
+                  <td>Nombre 3</td>
+                  <td>Apellido 3</td>
+              </tr>
+              <tr>
+                  <th>4</th>
+                  <td>Nombre 4</td>
+                  <td>Apellido 4</td>
+              </tr>
+              <tr>
+                  <th>5</th>
+                  <td>Nombre 5</td>
+                  <td>Apellido 5</td>
+              </tr>
+          </tbody>
+          <tfoot>
+              <tr>
+                  <th>Id</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+              </tr>
+          </tfoot>
+      </table>
+      </section>
+      <section id="multimedia">
+        <h3>Multimedia</h3>
+        <figure>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Schiaparelli_Hemisphere_Enhanced.jpg/280px-Schiaparelli_Hemisphere_Enhanced.jpg"
+            alt="imagen-de-marte">
+          <img src="img/Schiaparelli_Hemisphere_Enhanced.jpg" alt="imagen-de-marte">
+        </figure>
+
+        <audio src="audio/smoke-143172.mp3" controls>Song</audio>
+
+
+        
+      </section>
+
+    </article>
+
+  </main>
+  <aside>
+    <nav>
+      <ul>
+        <li><a href="https://www.ipartek.com/">Ipartek</li></a>
+        <li><a href="https://www.google.com/">Google</li></a>
+
+
+      </ul>
+      <dl>
+        <dt>Html</dt>
+        <dd>Hyper text markup language</dd>
+        <dt>CSS</dt>
+        <dd>Cascade Style Sheets</dd>
+      </dl>
+      <!-- Control + cedilla -->
+    </nav>
+  </aside>
+  <footer>
+    <p>&copy;2023 Elena Llanos</p>
+  </footer>
+
+</body>
+
+</html>
