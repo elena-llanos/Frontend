@@ -133,3 +133,32 @@ img{
     border-radius:  0.5em;
     
 }
+
+
+
+.google{
+    display: flex;
+    flex-direction: column;
+
+}
+.login, input, label, button{
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+    
+  
+}
+.datos{
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+}
+.detodo{
+   
+}
+.checks{ 
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+
+}

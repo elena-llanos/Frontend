@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" -->
+    <!-- integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <title>Formulario</title>
 </head>
@@ -13,13 +15,24 @@
 
     <main>
         <section id="form">
+
             <div class="google">
+
                 <h3>Formulario</h3>
+
+
                 <form action="https://www.google.com/search">
                     <input type="search" placeholder="search">
-                    <button>Buscar</button>
+                    <div>
+                        <button>Buscar</button>
+                    </div>
+
                 </form>
+
+
             </div>
+
+
             <hr>
 
             <form action="">
@@ -40,55 +53,79 @@
                     </fieldset>
                 </div>
 
-                <fieldset>
-                    <legend>Tus datos</legend>
-                    <input type="month" placeholder="month">
-                    <input type="text" maxlength="20" placeholder="name">
-                    <input type="text" placeholder="surname" required>
-                    <input type="number" min="0" max="99" placeholder="age">
-                    <input type="url" placeholder="your web">
-                    <input type="number" min="0" step="0.1" placeholder="¿presupuesto?">
-                    <textarea name="textarea" cols="30" rows="10"></textarea>
-                    <button>Enviar</button>
+                <fieldset> 
+                       <legend>Tus datos</legend>
+                    <div class="datos">
+                    
+                        <label for="mes">Mes; no funciona en firefox</label>
+                        <input type="month" placeholder="month">
 
+                        <label for="name">Nombre</label>
+                        <input type="text" maxlength="20" placeholder="name">
+
+                        <label for="surname">Apellido</label>
+                        <input type="text" placeholder="surname" required>
+
+                        <label for="age">Edad</label>
+                        <input type="number" min="0" max="99" placeholder="age">
+
+                        <label for="web">tu web</label>
+                        <input type="url" placeholder="your web">
+
+                        <label for="budget">Presupuesto</label>
+                        <input type="number" min="0" step="0.1" placeholder="¿presupuesto?">
+
+                        <textarea name="textarea" cols="30" rows="10"></textarea>
+                        <button>Enviar</button>
+                    </div>
                 </fieldset>
 
-                <fieldset>
-                    <legend>Checks y Radios y Selects</legend>
-                    <input type="checkbox">
-                    <input type="checkbox">
-                    <input type="checkbox">
-                    <input type="radio" name="opcion" value="1">
-                    <!-- Le ponemos name al radio para que elija uno u otro en funcion de ese name -->
-                    <input type="radio" name="opcion" value="2">
-                    <input type="radio" name="opcion">
-                    <input type="radio" name="opcion">
 
-                    <select name="" id="">
-                        <option value="1">Uno</option>
-                        <option value="2">Dos</option>
-                        <option value="3">Tres</option>
-                    </select>
-                    <select name="" id="" multiple>
-                        <option value="1" selected>Uno</option>
-                        <option value="2">Dos</option>
-                        <option value="3">Tres</option>
-                    </select>
-                    <label for="">Fecha</label>
-                    <input type="date" name="" id="">
-                    <label for="">Hora</label>
-                    <input type="time" name="" id="">
+                <div class="detodo">
+                    <fieldset>
+                        <legend>Checks y Radios y Selects</legend>
+                        <div class="checks">
 
-                    <label for="">Teléfono</label>
-                    <input type="tel" name="" id="">
-                </fieldset>
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="radio" name="opcion" value="1">
+                            <!-- Le ponemos name al radio para que elija uno u otro en funcion de ese name -->
+                            <input type="radio" name="opcion" value="2">
+                            <input type="radio" name="opcion">
+                            <input type="radio" name="opcion">
+                        </div>
 
-                <fieldset>
-                    <legend>Otras cositas</legend>
 
-                    <input type="color">
-                    <input type="range" name="" id="">
-                </fieldset>
+                        <select name="" id="">
+                            <option value="1">Uno</option>
+                            <option value="2">Dos</option>
+                            <option value="3">Tres</option>
+                        </select>
+                        <select name="" id="" multiple>
+                            <option value="1" selected>Uno</option>
+                            <option value="2">Dos</option>
+                            <option value="3">Tres</option>
+                        </select>
+                        <label for="">Fecha</label>
+                        <input type="date" name="" id="">
+                        <label for="">Hora</label>
+                        <input type="time" name="" id="">
+
+                        <label for="">Teléfono</label>
+                        <input type="tel" name="" id="">
+                    </fieldset>
+                </div>
+
+                <div class="cositas">
+                    <fieldset>
+                        <legend>Otras cositas</legend>
+
+                        <input type="color">
+                        <input type="range" name="" id="">
+                    </fieldset>
+                </div>
+
             </form>
 
 
