@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
+:root {
+    --color-tinta: rgb(22, 22, 22);
+    --color-fondo: rgb(233, 233, 233);
+    --color-enlace: rgb(39, 107, 183);
+    --margen: 1rem;
+    --color-fondo--alternativo: rgb(236, 190, 190);
+}
+
+body {
+    font-family: sans-serif;
+    color: var(--color-tinta);
+    background-color: var(--color-fondo);
+
+
+}
+
+nav,
+h1 {
+    background-color: var(--color-tinta);
+    color: var(--color-fondo);
+    text-align: center;
+    padding-bottom: 1px;
+    padding-top: 1px;
+
+}
+
+nav li {
+    list-style: none;
+    margin: var(--margen);
+
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-enlace);
+}
+
+main {
+    padding: var(--margen);
+}
+
+h2 {
+    text-align: center;
+    border-bottom: 1px solid var(--color-tinta);
+    text-transform: uppercase;
+}
+
+h2::before,
+h2::after {
+    content: "--- ";
+
+}
+
+h3 {
+    background-color: lightgray;
+    padding: var(--margen);
+    border-radius: var(--margen);
+}
+p{
+    line-height: calc(1rem + var(--margen));
+    margin: calc(1rem + var(--margen) *2 ) 0;
+    text-align: justify;
+}
+pre{
+  padding: var(--margen);
+}
+ol ol{
+    list-style: lower-alpha;
+    padding-left: calc(var(--margen) * 2);
+
+}
+ul{
+    list-style-position: inside;
+    list-style: none;
+}
+li{
+    list-style: none;
+}
+
+dt{
+    margin: var(--margen);
+    font-weight: bold;
+}
+
+dd{
+    margin-left: calc(var(--margen) * 2);
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+thead, tfoot{
+    background-color: var(--color-fondo--alternativo);
+   
+}
+th, td{
+    border: 1px solid lightgray;
+    padding: var(--margen);
+}
+
+tr th:first-of-type{
+    text-align: right;
+}
+tr th:not(first-of-type){
+    text-align: left;
+}
+caption{
+    background-color: var(--color-fondo--alternativo);
+    border: 1px solid lightgray;
+    font-weight: bold;
+    padding: var(--margen);
+}
+tr:nth-child(even){
+    background-color: var(--color-fondo--alternativo);
+}
+#multimedia *{
+
+    width: 100%;
+}
+img{
+    max-width: 50%;
+}
+
+ button, select, textarea, fieldset {
+    border-radius:  0.5em;
+    
+}
