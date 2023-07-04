@@ -63,102 +63,267 @@ h3 {
     padding: var(--margen);
     border-radius: var(--margen);
 }
-p{
+
+p {
     line-height: calc(1rem + var(--margen));
-    margin: calc(1rem + var(--margen) *2 ) 0;
+    margin: calc(1rem + var(--margen) *2) 0;
     text-align: justify;
 }
-pre{
-  padding: var(--margen);
+
+pre {
+    padding: var(--margen);
 }
-ol ol{
+
+ol ol {
     list-style: lower-alpha;
     padding-left: calc(var(--margen) * 2);
 
 }
-ul{
+
+ul {
     list-style-position: inside;
     list-style: none;
 }
-li{
+
+li {
     list-style: none;
 }
 
-dt{
+dt {
     margin: var(--margen);
     font-weight: bold;
 }
 
-dd{
+dd {
     margin-left: calc(var(--margen) * 2);
 }
 
-table{
+table {
     width: 100%;
     border-collapse: collapse;
 }
-thead, tfoot{
+
+thead,
+tfoot {
     background-color: var(--color-fondo--alternativo);
-   
+
 }
-th, td{
+
+th,
+td {
     border: 1px solid lightgray;
     padding: var(--margen);
 }
 
-tr th:first-of-type{
+tr th:first-of-type {
     text-align: right;
 }
-tr th:not(first-of-type){
+
+tr th:not(first-of-type) {
     text-align: left;
 }
-caption{
+
+caption {
     background-color: var(--color-fondo--alternativo);
     border: 1px solid lightgray;
     font-weight: bold;
     padding: var(--margen);
 }
-tr:nth-child(even){
+
+tr:nth-child(even) {
     background-color: var(--color-fondo--alternativo);
 }
-#multimedia *{
+
+#multimedia * {
 
     width: 100%;
 }
-img{
+
+img {
     max-width: 50%;
 }
 
- button, select, textarea, fieldset {
-    border-radius:  0.5em;
-    
+button,
+select,
+textarea,
+fieldset {
+    border-radius: 0.5em;
+
 }
 
 
 
-.google{
+.google {
     display: flex;
     flex-direction: column;
 
 }
-.login, input, label, button{
+
+.login,
+input,
+label,
+button {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+
+
+}
+
+.datos {
     display: flex;
     flex-direction: column;
     padding-top: 8px;
-    
-  
 }
-.datos{
-    display: flex;
-    flex-direction: column;
-    padding-top: 8px;
-}
-.detodo{
-   
-}
-.checks{ 
+
+.checks {
     display: flex;
     flex-direction: row;
     padding: 8px;
 
+}
+
+@media (min-width: 768px) {
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin: 0;
+    }
+
+    nav a {
+        padding: var(--margen);
+    }
+
+    nav a:hover {
+        color: var(--color-tinta);
+        background-color: var(--color-fondo);
+    }
+
+    footer {
+        display: flex;
+    }
+
+    footer p {
+        padding: var(--margen);
+        margin: 0;
+    }
+
+    article {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--margen);
+    }
+
+    h2 {
+        width: 100%;
+    }
+
+    #parrafos,
+    #listas {
+        width: calc(50% - var(--margen) / 2);
+    }
+
+    #tablas {
+        width: 100%
+    }
+
+    form:first-of-type {
+        display: flex;
+    }
+
+    input[name=q] {
+        flex-grow: 1;
+    }
+
+    form:nth-of-type(2) div {
+        display: flex;
+        align-items: baseline;
+    }
+
+    form:nth-of-type(2) label {
+        width: 7rem;
+    }
+
+    #formularios fieldset:last-of-type {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--margen);
+    }
+
+    #formularios fieldset:last-of-type>*:not(legend) {
+        width: calc(50% - var(--margen) / 2);
+    }
+
+    #formularios fieldset:last-of-type>textarea {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1440px) {
+
+    article#html {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        /* grid-template-rows: repeat(3, auto); */
+        justify-items: stretch;
+    }
+
+    article#html>*{
+        max-width: 100;
+    }
+    h2 {
+        grid-column-end: span 6;
+    }
+
+    #parrafos {
+        grid-column-end: span 2;
+    }
+
+    #listas {
+        grid-column-end: span 1;
+        /* Por defecto es 1 así que no haría falta ponerlo */
+    }
+
+    #tablas {
+        grid-column-end: span 3;
+    }
+
+    #multimedia, #formualrios{
+        grid-column-end: span 3;
+    }
+
+}
+
+@media (min-width: 2560px){
+    h2{
+        grid-area: titulo;
+    }
+
+    parrafos{
+        grid-area: parrafos;
+    }
+    listas{
+        grid-area: listas;
+    }
+    tablas{
+        grid-area: tablas;
+    }
+    multimedia{
+        grid-area: multimedia;
+    }
+
+    #formularios{
+        grid-area: formularios;
+    }
+
+
+    article#html{
+        grid-template-areas: 
+        "titulo titulo titulo titulo titulo titulo"
+       
+        "parrafos listas tablas multimedia formularios  formularios "
+        ". . . . formularios formularios"
+    }
 }
