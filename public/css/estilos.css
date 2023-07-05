@@ -1,0 +1,606 @@
+/* VARIABLES */
+
+:root {
+    --tipo-letra-principal: 'Ysabeau Infant', Trebuchet, Arial, Helvetica, , sans-serif;
+    /* cogerá la primera que encuentra */
+    --tipo-letra-titulos: 'Bungee Spice', serif, cursive;
+    --color-tinta: rgb(22, 22, 22);
+    --color-fondo: rgb(233, 233, 233);
+    --color-fondo-alternativo: rgb(193, 193, 193);
+    --color-fondo-alternativo-2: rgb(217, 217, 217);
+    --color-enlace: rgb(39, 107, 183);
+    --color-linea: rgb(200, 200, 200);
+    --margen: 0.5rem;
+    --sombra: var(--margen) var(--margen) calc(var(--margen) * 3) black;
+}
+
+/* font-family: 'Bungee Spice', cursive;
+font-family: 'Noto Color Emoji', sans-serif;
+font-family: 'Ysabeau Infant', sans-serif;*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=JetBrains+Mono:wght@200&family=Noto+Color+Emoji&family=Ysabeau+Infant:ital,wght@0,1;0,100;1,1;1,100&display=swap');
+
+
+
+/* GENERALES */
+
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h3,
+pre,
+figure,
+img,
+audio,
+video,
+iframe {
+    border-radius: var(--margen);
+}
+
+iframe {
+    border: 0;
+}
+
+body {
+    margin: 0;
+
+    font-family: sans-serif;
+    color: var(--color-tinta);
+    background-color: var(--color-fondo);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--tipo-letra-titulos);
+}
+
+p {
+    line-height: calc(1rem + var(--margen));
+    margin: calc(1rem + var(--margen) * 2) 0;
+}
+
+pre {
+    background-color: var(--color-fondo-alternativo);
+    padding: var(--margen);
+}
+
+ul,
+ol {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+ol ol {
+    list-style: lower-alpha;
+    padding-left: calc(var(--margen) * 4);
+}
+
+dt {
+    margin: var(--margen) 0;
+    font-weight: bold;
+}
+
+dd {
+    margin-left: calc(var(--margen) * 2);
+}
+
+/* Tabla usando CSS Nesting (¡NOVEDAD!) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    & caption {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    & caption,
+    & thead,
+    & tfoot {
+        background-color: var(--color-fondo-alternativo);
+    }
+
+    & caption,
+    & th,
+    & td {
+        border: 1px solid var(--color-linea);
+        padding: var(--margen);
+    }
+
+    & tr {
+        &:nth-of-type(even) {
+            background-color: var(--color-fondo-alternativo-2)
+        }
+
+        & th:first-of-type {
+            text-align: right;
+        }
+
+        & th:not(:first-of-type) {
+            text-align: left;
+        }
+    }
+}
+
+strong {
+    text-transform: uppercase;
+}
+
+.destacado {
+    font-variant: small-caps;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-enlace);
+}
+
+nav,
+h1,
+footer {
+    background-color: var(--color-tinta);
+    color: var(--color-fondo);
+    text-align: center;
+    padding: var(--margen);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style: none;
+    margin: var(--margen);
+}
+
+nav a,
+footer a {
+    color: var(--color-fondo);
+}
+
+main {
+    padding: var(--margen);
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    border-bottom: 1px solid var(--color-tinta);
+    text-transform: uppercase;
+}
+
+h2::before,
+h2::after {
+    content: " ··· ";
+}
+
+h3 {
+    background-color: var(--color-fondo-alternativo);
+    text-align: center;
+    padding: var(--margen);
+}
+
+/* MULTIMEDIA */
+
+#multimedia>*:not(h3),
+img {
+    width: 100%;
+    margin: var(--margen) 0;
+}
+
+#multimedia iframe:nth-of-type(2) {
+    height: 400px;
+}
+
+img,
+video,
+iframe {
+    border: 1px solid var(--color-linea);
+}
+
+/* FORMULARIOS */
+
+input,
+button,
+select,
+textarea,
+fieldset {
+    border-radius: var(--margen);
+    border: 1px solid var(--color-linea);
+    padding: var(--margen);
+    margin: var(--margen) 0;
+}
+
+fieldset *:not(legend) {
+    width: 100%;
+}
+
+/* FLOTANTE */
+
+#arriba {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: var(--margen);
+    padding: var(--margen);
+}
+
+.proporcion {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.proporcion::after {
+    display: block;
+    content: "";
+    padding-top: 56.25%;
+    /* 16:9 -> 9/16 */
+}
+
+.proporcion iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.proporcion.p4x3::after {
+    padding-top: 75%;
+    /* 4:3 -> 3/4 */
+}
+
+.proporcion.p1x1::after {
+    padding-top: 100%;
+    /* 1:1 -> 1/1 */
+}
+
+/* EFECTOS */
+
+button,
+h3,
+h1,
+#arriba,
+img,
+audio,
+video,
+.proporcion,
+table,
+pre {
+    box-shadow: var(--sombra);
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 768px) {
+    body>nav {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin: 0;
+    }
+
+    nav li:last-of-type {
+        margin-left: auto;
+    }
+
+    nav a {
+        padding: var(--margen);
+    }
+
+    nav a:hover {
+        color: var(--color-tinta);
+        background-color: var(--color-fondo);
+    }
+
+    footer {
+        display: flex;
+    }
+
+    footer p {
+        padding: var(--margen);
+        margin: 0;
+    }
+
+    article {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--margen);
+    }
+
+    h2 {
+        width: 100%;
+    }
+
+    #parrafos,
+    #listas {
+        width: calc(50% - var(--margen) / 2);
+    }
+
+    #tablas {
+        width: 100%
+    }
+
+    form:first-of-type {
+        display: flex;
+    }
+
+    input[name=q] {
+        flex-grow: 1;
+    }
+
+    form:nth-of-type(2) div {
+        display: flex;
+        align-items: baseline;
+    }
+
+    form:nth-of-type(2) label {
+        width: 7rem;
+    }
+
+    #formularios fieldset:last-of-type {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--margen);
+    }
+
+    #formularios fieldset:last-of-type>*:not(legend) {
+        width: calc(50% - var(--margen) / 2);
+    }
+
+    #formularios fieldset:last-of-type>textarea {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    #arriba {
+        display: none;
+    }
+
+    #multimedia {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--margen);
+        flex-direction: row;
+        align-items: flex-start;
+        align-content: flex-start;
+    }
+
+    #multimedia>*:not(h3) {
+        width: calc(50% - var(--margen) / 2);
+    }
+
+    .proporcion::after {
+        padding-top: 56.25% !important;
+    }
+
+    #multimedia h3 {
+        width: 100%;
+        order: 1;
+    }
+
+    #multimedia audio {
+        width: 100%;
+        order: 2;
+    }
+
+    #multimedia figure {
+        order: 3;
+    }
+
+    #multimedia .proporcion:nth-of-type(2) {
+        order: 4;
+    }
+
+    #multimedia video,
+    #multimedia .proporcion:not(:nth-of-type(2)) {
+        width: calc(33.3333% - var(--margen) / 1.5);
+        order: 5;
+    }
+}
+
+@media (min-width: 1440px) {
+    article#html {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        /* grid-template-rows: repeat(3, auto); */
+
+        justify-items: stretch;
+    }
+
+    article#html>* {
+        width: 100%;
+    }
+
+    h2 {
+        grid-column-end: span 6;
+    }
+
+    #parrafos {
+        grid-column-end: span 2;
+    }
+
+    #listas {
+        grid-column-end: span 1;
+    }
+
+    #tablas {
+        grid-column-end: span 3;
+    }
+
+    #multimedia,
+    #formularios {
+        grid-column-end: span 3;
+    }
+}
+
+@media (min-width: 2560px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr auto;
+
+        grid-template-areas:
+            "menu menu"
+            "principal anuncios"
+            "pie pie"
+    }
+
+    aside nav {
+        height: 100%;
+    }
+
+    aside ul {
+        flex-direction: column;
+    }
+
+    body>nav {
+        grid-area: menu;
+    }
+
+    main {
+        grid-area: principal;
+    }
+
+    aside {
+        grid-area: anuncios;
+    }
+
+    footer {
+        grid-area: pie;
+    }
+
+    h2 {
+        grid-area: titulo;
+    }
+
+    #parrafos {
+        grid-area: parrafos;
+    }
+
+    #listas {
+        grid-area: listas;
+    }
+
+    #tablas {
+        grid-area: tablas;
+    }
+
+    #multimedia {
+        grid-area: multimedia;
+    }
+
+    #formularios {
+        grid-area: formularios;
+    }
+
+    article#html {
+        grid-template-areas:
+            "titulo titulo titulo titulo titulo titulo"
+            "parrafos listas multimedia multimedia formularios formularios"
+            "tablas tablas multimedia multimedia formularios formularios"
+            ". . multimedia multimedia formularios formularios"
+    }
+
+    #multimedia {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: stretch;
+        align-items: stretch;
+        grid-template-areas:
+            "m-titulo m-titulo"
+            "audio audio"
+            "foto maps"
+            "video youtube"
+            "spotify spotify"
+    }
+
+    #multimedia>* {
+        width: 100% !important;
+    }
+
+    #multimedia h3 {
+        grid-area: m-titulo;
+    }
+
+    #multimedia figure {
+        grid-area: foto;
+    }
+
+    #multimedia audio {
+        grid-area: audio;
+    }
+
+    #multimedia video {
+        grid-area: video;
+    }
+
+    #multimedia .proporcion:nth-of-type(1) {
+        grid-area: maps;
+    }
+
+    #multimedia .proporcion:nth-of-type(2) {
+        grid-area: spotify;
+    }
+
+    #multimedia .proporcion:nth-of-type(3) {
+        grid-area: youtube;
+    }
+
+
+}
+
+@media (min-width: 4320px) {
+    article#html {
+        grid-template-areas:
+            "titulo titulo titulo titulo titulo titulo"
+            "parrafos multimedia multimedia multimedia multimedia formularios"
+            "listas multimedia multimedia multimedia multimedia formularios"
+            "tablas multimedia multimedia multimedia multimedia formularios"
+            ". multimedia multimedia multimedia multimedia formularios"
+    }
+}
+
+@media print {
+
+    body>nav,
+    audio,
+    video,
+    .proporcion:not(:first-of-type),
+    #formularios,
+    #arriba {
+        display: none;
+    }
+
+    h1,
+    aside a,
+    footer,
+    footer a {
+        color: black;
+    }
+}

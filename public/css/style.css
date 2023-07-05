@@ -183,6 +183,19 @@ button {
 
 }
 
+#arriba {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: var(--margen);
+    padding: var(--margen);
+}
+
 @media (min-width: 768px) {
     nav ul {
         display: flex;
@@ -288,6 +301,7 @@ button {
 
     #tablas {
         grid-column-end: span 3;
+        /* Si quieres que ocupe 2 hay que poner 3; son las líneas que cuenta, no el número de columnas */
     }
 
     #multimedia, #formualrios{
@@ -325,5 +339,15 @@ button {
        
         "parrafos listas tablas multimedia formularios  formularios "
         ". . . . formularios formularios"
+    }
+}
+
+@media print{
+    body>nav, audio, video, .proporcion:not(:first-of-type), #formularios{
+        display: none;
+    }
+
+    h1, aside, a , footer{
+        color: black;
     }
 }
