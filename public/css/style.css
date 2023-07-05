@@ -143,58 +143,6 @@ img {
     max-width: 50%;
 }
 
-button,
-select,
-textarea,
-fieldset {
-    border-radius: 0.5em;
-
-}
-
-
-
-.google {
-    display: flex;
-    flex-direction: column;
-
-}
-
-.login,
-input,
-label,
-button {
-    display: flex;
-    flex-direction: column;
-    padding: 8px;
-
-
-}
-
-.datos {
-    display: flex;
-    flex-direction: column;
-    padding-top: 8px;
-}
-
-.checks {
-    display: flex;
-    flex-direction: row;
-    padding: 8px;
-
-}
-
-#arriba {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-
-    margin: 0;
-    padding: 0;
-
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: var(--margen);
-    padding: var(--margen);
-}
 
 @media (min-width: 768px) {
     nav ul {

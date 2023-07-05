@@ -192,6 +192,14 @@ h3 {
     padding: var(--margen);
 }
 
+#redes li {
+    list-style: none;
+    display: flex;
+    gap: var(--margen);  
+    justify-content: space-around;
+
+}
+
 /* MULTIMEDIA */
 
 #multimedia>*:not(h3),
