@@ -1,0 +1,11 @@
+#redes li a{
+    list-style: none;
+    text-decoration: none;
+    
+}
+
+.links li{
+    list-style: none; 
+    display: flex;
+    flex-direction: column;
+}

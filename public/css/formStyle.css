@@ -38,7 +38,11 @@
     padding: 8px;
 
 }
-
+.pass{
+    display: flex;
+    justify-content: left;
+    margin-left: ;
+}
 
 #arriba {
     display: flex;
