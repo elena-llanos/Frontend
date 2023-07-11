@@ -1,0 +1,19 @@
+input, button {
+    font-size:  2rem;
+    border: 1px solid darkgray;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+input{
+    text-align: right;
+}
+
+body{
+    display: grid;
+    gap: 0.5rem;    
+}
+
+#botonera{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
