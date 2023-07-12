@@ -1,24 +1,9 @@
 
 
 
-let productos = [
 
-    {
-        id: 1,
-        nombre: 'producto 1',
-        precio: 100
-    },
-    {
-        id: 2,
-        nombre: 'producto 2',
-        precio: 200
-    },
-    {
-        id: 3,
-        nombre: 'producto 3',
-        precio: 300
-    }
-]
+
+const URL = 'http://localhost:3000/productos/';
 
 let tbody = this.document.querySelector('tbody');
 let form = this.document.querySelector('form')
@@ -37,10 +22,15 @@ window.addEventListener('DOMContentLoaded', function () {
 
 });
 
-function rellenarTabla() {
+async function rellenarTabla() {
     form.style.display = 'none';
     table.style.display = 'block';
+
+    const respuesta = await fetch(URL);
+    const productos = await respuesta.json();
+
     tbody.innerHTML = "";
+
     for (const producto of productos) {
         const tr = this.document.createElement('tr');
         tr.innerHTML = `
@@ -58,10 +48,11 @@ function rellenarTabla() {
 
 }
 
-function editar(id) {
+async function editar(id) {
     console.log('EDITAR', id);
 
-    const producto = productos.find(producto => producto.id === id);
+    const respuesta = await fetch(URL + id);
+    const producto = await respuesta.json();
 
     inputId.value = producto.id;
     inputNombre.value = producto.nombre;
@@ -73,11 +64,13 @@ function mostrarFormulario() {
     form.style.display = 'block';
 }
 
-function borrar(id) {
+async function borrar(id) {
     console.log('BORRAR', id);
 
-    productos = productos.filter(producto => producto.id !== id);
-    console.log(productos);
+    const respuesta = await fetch(URL + id, {
+        method: 'DELETE'
+    });
+   
     rellenarTabla();
 
 }
@@ -89,29 +82,33 @@ function add() {
     mostrarFormulario();
 }
 
-function guardar() {
+async function guardar() {
     console.log('guardar');
     const producto = { nombre: inputNombre.value, precio: +inputPrecio.value };
 
     if (id.value) {
         producto.id = +id.value;
 
-        productos[productos.findIndex(p => p.id === producto.id)] = producto;
-    } else {
-        if (productos.length) {
-            const ids = productos.map(producto => producto.id);
-            const maximoId = Math.max(...ids);
-            producto.id = maximoId + 1;
-        }
-        else {
-            producto.id = 1;
-        }
+        const respuesta = await fetch(URL + producto.id, {
+            method: 'PUT',
+            body: JSON.stringify(producto),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
 
-        productos.push(producto);
+        
+    } else {
+        const respuesta = await fetch(URL, {
+            method: 'POST',
+            body: JSON.stringify(producto),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
     }
 
     rellenarTabla();
 
 }
 
-'[{"id":1,"nombre":"producto 1","precio":100},{"id":2,"nombre":"producto 2","precio":200},{"id":3,"nombre":"producto 3","precio":300}]'

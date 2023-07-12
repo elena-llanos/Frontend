@@ -1,0 +1,24 @@
+{
+  "productos": [
+    {
+      "nombre": "El mejor producto",
+      "precio": 100,
+      "id": 1
+    },
+    {
+      "id": 3,
+      "nombre": "producto 3",
+      "precio": 300
+    },
+    {
+      "nombre": "producto nuevo",
+      "precio": 100,
+      "id": 4
+    },
+    {
+      "nombre": "Otro más",
+      "precio": 500,
+      "id": 5
+    }
+  ]
+}
