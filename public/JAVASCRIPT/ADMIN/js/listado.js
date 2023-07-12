@@ -113,3 +113,5 @@ function guardar() {
     rellenarTabla();
 
 }
+
+'[{"id":1,"nombre":"producto 1","precio":100},{"id":2,"nombre":"producto 2","precio":200},{"id":3,"nombre":"producto 3","precio":300}]'
